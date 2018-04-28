@@ -1,0 +1,14 @@
+###########################
+# Configuration for rubocop
+# in .rubocop.yml
+
+inherit_from:
+  - .rubocop_todo.yml
+
+##############
+# Project specific overrides here, example:
+# Metrics/BlockLength:
+#   Exclude:
+#    - 'tasks/the_huge_task.rake'
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
