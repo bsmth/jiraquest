@@ -1,6 +1,6 @@
 require 'bundler/gem_tasks'
 
-task default: :test
+task default: :run
 
 task :run do
   ruby 'lib/roprquest.rb'

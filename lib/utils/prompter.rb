@@ -11,6 +11,18 @@ class Prompter
     system 'clear'
   end
 
+  def resume(user)
+    @prompt.yes?("Would you like to resume ROPRQuest as #{user}?")
+  end
+
+  def delete(user)
+    @prompt.yes?("Would you like to delete the data for #{user}?")
+  end
+
+  def create_user?
+    @prompt.yes?("Create a new ROPRQuest user?")
+  end
+
   def ask_date
     Time.parse(@prompt.ask('Enter a date (Y/M/D):'))
   end
