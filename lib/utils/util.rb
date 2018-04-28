@@ -4,6 +4,7 @@ require_relative 'reacter'
 require_relative 'queries'
 require_relative 'prompter'
 require_relative 'reporter'
+require_relative 'login'
 require 'tty-spinner'
 
 # Some basic utilities

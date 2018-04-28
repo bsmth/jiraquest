@@ -1,4 +1,5 @@
 require_relative 'util'
+require_relative 'prompter'
 
 # Simple Queries
 class Query
@@ -17,6 +18,6 @@ class Query
   end
 
   def user
-    getuser
+    Prompter.new.get_user
   end
 end

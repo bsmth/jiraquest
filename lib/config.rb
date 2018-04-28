@@ -21,7 +21,8 @@ class Config
     @spinner.auto_spin
     # progress
     # choose
-    if success
+    yes = true
+    if yes
       # user = Query.new.user
       success("✅  Successfully #{message}\n")
     else

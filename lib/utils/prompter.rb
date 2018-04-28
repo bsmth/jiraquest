@@ -22,4 +22,8 @@ class Prompter
   def ask_end_date
     Time.parse(@prompt.ask('Enter an end date (Y/M/D):'))
   end
+
+  def user
+    @prompt.ask('Please type your username:')
+  end
 end
