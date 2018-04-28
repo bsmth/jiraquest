@@ -1,6 +1,5 @@
 require_relative 'roprquest/version'
-require_relative 'utils/utils'
-require_relative 'tasks/tasks'
+require_relative 'utils/util'
 require_relative 'config'
 
 # Run through the setup checklist before proceeding
