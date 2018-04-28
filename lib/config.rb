@@ -22,7 +22,7 @@ class Config
     # progress
     # choose
     if success
-      user = Query.new.user
+      # user = Query.new.user
       success("✅  Successfully #{message}\n")
     else
       @spinner.error("❌   Could not #{message}\n\n")

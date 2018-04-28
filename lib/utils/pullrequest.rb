@@ -36,12 +36,8 @@ class PRBot
   end
 
   # comment on a PR - requires the commit sha, file and position
-  def create_pr_comment(pull_id, comment, commit_id, file, position)
+  def create_pr_comment(pull_id, comment)
     @c.create_pull_request_comment(@repo, pull_id, comment, commit_id, file, position)
-  end
-
-  def pr_reply(pull_id, body, comment_id)
-    @c.create_pull_request_comment_reply(@repo, pull_id, body, comment_id)
   end
 
   def approve_pr(pr_number)

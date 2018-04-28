@@ -17,6 +17,6 @@ class Query
   end
 
   def user
-    $user
+    getuser
   end
 end
