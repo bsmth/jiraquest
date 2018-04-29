@@ -13,6 +13,10 @@ class Prompter
     system 'clear'
   end
 
+  def really_sure?
+    @prompt.yes?('Are you totally sure, Y/N?')
+  end
+
   def user
     @prompt.ask('Please enter your username:')
   end
