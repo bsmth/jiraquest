@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rubocop:disable Metrics/MethodLength
 
 # Temporarily redirects STDOUT and STDERR to /dev/null
