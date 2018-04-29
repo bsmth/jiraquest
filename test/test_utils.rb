@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'test/unit'
-require_relative '../lib/utils/util'
+require_relative '../lib/utils/utils'
 
 class TestUtils < Test::Unit::TestCase
   def test_time_conversion

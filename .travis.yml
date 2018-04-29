@@ -16,6 +16,5 @@ env:
     - CC_TEST_REPORTER_ID=8db13b5426f53feb5dc03024a07bf4440018c3bcf0f857fa80c68f4d05c224d7
 script:
 - bundle exec rake test
-- bundle exec rake rubocop
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

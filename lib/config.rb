@@ -1,4 +1,6 @@
-require_relative 'utils/util'
+# frozen_string_literal: true
+
+require_relative 'utils/utils'
 require 'tty-prompt'
 require 'tty-spinner'
 require 'pastel'
@@ -21,7 +23,8 @@ class Config
     @spinner.auto_spin
     # progress
     # choose
-    if success
+    yes = true
+    if yes
       # user = Query.new.user
       success("✅  Successfully #{message}\n")
     else
