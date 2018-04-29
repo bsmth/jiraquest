@@ -46,6 +46,16 @@ class Login
     end
   end
 
+  def reset_data
+    data = Activity.new.list_distractions
+    data.each do |activity|
+      @store.transaction { 
+        store = @store
+        store["distractions"][activity] = 0
+      }
+    end
+  end
+
   # Ask if really sure to delete user
   def delete_user?
     return false unless Prompter.new.delete(@user)
@@ -55,6 +65,7 @@ class Login
       store = @store
       store.delete(:user)
     end
+    reset_data
     puts "❌ Deleted user #{@user}"
     create_user
   end

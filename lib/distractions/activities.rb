@@ -4,36 +4,48 @@ require_relative '../utils/utils'
 # Workspace setup miniquest
 class Activity
   def initialize
+    @store = YAML::Store.new('data.yml')
     @prompt = TTY::Prompt.new
+    @distractions = ["water", "coffee", "walk", "text", "think", "complain", "chat"]
+  end
+
+  def list_distractions
+    @distractions
   end
 
   def coffee
     puts 'You made a coffee'
-    # coffee count
+    update_distraction("coffee")
   end
 
   def chat
     puts 'You chatted with your colleagues'
+    update_distraction("chat")
   end
 
   def text
     puts 'You sent a text to your significant other'
+    update_distraction("text")
   end
 
   def water
     puts 'You drank some cucumber water'
+    update_distraction("water")
   end
 
   def complain
     puts 'You complained loudly'
+    update_distraction("complain")
   end
 
   def walk
     puts 'You take a walk outside'
+    update_distraction("walk")
   end
 
   def think
-    puts 'You thought briefly about things'
+    puts 'You thought about things'
+    update_distraction("think")
   end
 
   # rubocop:disable Metrics/MethodLength
@@ -54,16 +66,25 @@ class Activity
 
   # rubocop:disable Metrics/CyclomaticComplexity
   def choose
-    @result = case activities
-              when 1 then coffee
-              when 2 then chat
-              when 3 then text
-              when 4 then water
-              when 5 then complain
-              when 6 then walk
+    @distraction = case activities
+              when 1 then coffee 
+              when 2 then chat 
+              when 3 then text 
+              when 4 then water 
+              when 5 then complain 
+              when 6 then walk 
               when 7 then think
               end
-    @result
+   
+    @distraction
   end
   # rubocop:enable Metrics/CyclomaticComplexity
+
+  def update_distraction(distraction)
+    @store.transaction { @store["distractions"][distraction] += 1 }
+  end
+
+  def distract_count(distraction)
+    @store["distractions"][distraction]
+  end
 end
