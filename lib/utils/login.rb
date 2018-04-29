@@ -36,5 +36,6 @@ class Login
       store = @store
       store.delete(:user)
     end
+    puts "Deleted #{@user}"
   end
 end
