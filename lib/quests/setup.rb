@@ -12,7 +12,7 @@ class Setup
   def login
     puts "Your first Quest is 'Log In'"
     vpn if boot
-    ide_update
+    # ide_update
   end
 
   def boot
