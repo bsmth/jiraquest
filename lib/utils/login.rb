@@ -44,7 +44,6 @@ class Login
       @user = Prompter.new.user
       store[:user] = @user
     end
-    Reporter.new.success("Logged in as #{@user}")
   end
 
   # Ask if really sure to delete user

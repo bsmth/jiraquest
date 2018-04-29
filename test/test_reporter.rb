@@ -13,13 +13,13 @@ class TestReporter < Test::Unit::TestCase
 
   def test_success
     assert_nothing_raised do
-      suppress_output { Reporter.new.success("cool") }
+      suppress_output { Reporter.new.success('cool') }
     end
   end
 
   def test_validate
     assert_nothing_raised do
-      suppress_output { Reporter.new.validate("test") }
+      suppress_output { Reporter.new.validate('test') }
     end
   end
 end

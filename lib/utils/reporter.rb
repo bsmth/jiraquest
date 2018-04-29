@@ -9,7 +9,7 @@ class Reporter
     format = "[#{@pastel.yellow(':spinner')}] " + @pastel.yellow('ROPRing...')
     @spinner = TTY::Spinner.new(format, success_mark: @pastel.green('+'))
   end
-  
+
   def welcome
     Fig.new.roprquest
     success("🤖  Welcome to ROPRQuest, #{Login.new.current_user}!")
