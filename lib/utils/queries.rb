@@ -1,5 +1,6 @@
-require_relative 'util'
-require_relative 'prompter'
+# frozen_string_literal: true
+
+require_relative 'utils'
 
 # Simple Queries
 class Query

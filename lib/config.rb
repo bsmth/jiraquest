@@ -1,4 +1,6 @@
-require_relative 'utils/util'
+# frozen_string_literal: true
+
+require_relative 'utils/utils'
 require 'tty-prompt'
 require 'tty-spinner'
 require 'pastel'

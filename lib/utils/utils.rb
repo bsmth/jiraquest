@@ -1,8 +1,8 @@
-require_relative 'pullrequest'
+# frozen_string_literal: true
+
+require_relative 'prompts/prompts'
 require_relative 'issues'
-require_relative 'reacter'
 require_relative 'queries'
-require_relative 'prompter'
 require_relative 'reporter'
 require_relative 'login'
 require 'tty-spinner'

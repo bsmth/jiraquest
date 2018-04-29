@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Queries, opens and closes issues
 class Issues
   # Create a new issue
