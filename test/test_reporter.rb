@@ -4,11 +4,10 @@ require 'test/unit'
 require_relative '../lib/utils/utils'
 require_relative 'suppress_output'
 
-class TestUtils < Test::Unit::TestCase
-  def test_login
+class TestReporter < Test::Unit::TestCase
+  def test_welcome
     assert_nothing_raised do
-      suppress_output { Login.new.user_message }
-      suppress_output { Login.new.current_user }
+      suppress_output { Reporter.new.welcome }
     end
   end
 end

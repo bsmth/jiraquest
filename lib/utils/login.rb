@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'yaml/store'
-require_relative 'queries'
 require_relative 'utils'
 
 # Logs in users
