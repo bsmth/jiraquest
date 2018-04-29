@@ -1,7 +1,14 @@
-AllCops:
-  TargetRubyVersion: 2.3.0
-  Exclude:
-    - 'test/**/*'
-Metrics/LineLength:
-  # This will disable the rule completely, regardless what other options you put
+###########################
+# Configuration for rubocop
+# in .rubocop.yml
+
+inherit_from:
+  - .rubocop_todo.yml
+
+##############
+# Project specific overrides here, example:
+# Metrics/BlockLength:
+#   Exclude:
+#    - 'tasks/the_huge_task.rake'
+Naming/UncommunicativeMethodParamName:
   Enabled: false

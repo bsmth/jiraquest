@@ -1,0 +1,8 @@
+Metrics/LineLength:
+  Max: 96
+
+# Offense count: 1
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
