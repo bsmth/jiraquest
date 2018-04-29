@@ -10,4 +10,16 @@ class TestReporter < Test::Unit::TestCase
       suppress_output { Reporter.new.welcome }
     end
   end
+
+  def test_success
+    assert_nothing_raised do
+      suppress_output { Reporter.new.success("cool") }
+    end
+  end
+
+  def test_validate
+    assert_nothing_raised do
+      suppress_output { Reporter.new.validate("test") }
+    end
+  end
 end
