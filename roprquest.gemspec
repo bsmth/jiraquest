@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'test-unit'
+  spec.add_dependency 'figlet'
   spec.add_dependency 'pastel'
   spec.add_dependency 'random-word'
   spec.add_dependency 'rubocop'

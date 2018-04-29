@@ -11,17 +11,29 @@ class Login
     @user = @store.transaction { @store[:user] }
   end
 
+  # simple method to return the username only for other methods
+  def current_user
+    @user
+  end
+
+  # Report who is logged in
+  def user_message
+    puts "Logged in as #{@user}"
+  end
+
+  # If there a user exists, ask to resume
   def login
-    unless @user
-      create_user 
-    else
+    if @user
       resume
+    else
+      create_user
     end
   end
 
+  # Ask to resume, if not, ask to delete user
   def resume
     if Prompter.new.resume(@user)
-      display_user
+      user_message
     else
       delete_user?
     end
@@ -36,20 +48,16 @@ class Login
     puts "Successfully Logged in as #{@user}"
   end
 
+  # Ask if really sure to delete user
   def delete_user?
-    if Prompter.new.delete(@user)
-      puts "\n❌ DELETING user #{@user}! This action cannot be undone\n"
-      exit unless Prompter.new.really_sure?
-      @store.transaction do
-        store = @store
-        store.delete(:user)
-      end
-      puts "❌ Deleted user #{@user}"
-      create_user
+    return false unless Prompter.new.delete(@user)
+    puts "\n❌ DELETING user #{@user}! This action cannot be undone\n"
+    return false unless Prompter.new.really_sure?
+    @store.transaction do
+      store = @store
+      store.delete(:user)
     end
-  end
-
-  def display_user
-    puts "Logged in as #{@user}"
+    puts "❌ Deleted user #{@user}"
+    create_user
   end
 end
