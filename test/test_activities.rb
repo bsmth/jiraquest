@@ -8,6 +8,7 @@ class TestReporter < Test::Unit::TestCase
   def test_Activites
     assert_nothing_raised do
       suppress_output do
+        Login.new.reset_data
         Activity.new.coffee
         Activity.new.chat
         Activity.new.text
@@ -15,6 +16,7 @@ class TestReporter < Test::Unit::TestCase
         Activity.new.complain
         Activity.new.walk
         Activity.new.think
+        Login.new.reset_data
       end
     end
   end

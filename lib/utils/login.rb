@@ -48,11 +48,14 @@ class Login
 
   def reset_data
     data = Activity.new.list_distractions
-    data.each do |activity|
-      @store.transaction { 
-        store = @store
-        store["distractions"][activity] = 0
-      }
+    @distractions = Array.new(data.length, {})
+    data.each_with_index do |activity, i|
+      @distractions[i][activity] = 0
+    end
+    @distractions.uniq!
+    @store.transaction do
+      store = @store
+      store['distractions'] = @distractions[0]
     end
   end
 
