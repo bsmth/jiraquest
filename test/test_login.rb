@@ -9,6 +9,7 @@ class TestUtils < Test::Unit::TestCase
     assert_nothing_raised do
       suppress_output { Login.new.user_message }
       suppress_output { Login.new.current_user }
+      # suppress_output { Login.new.reset_data }
     end
   end
 end
