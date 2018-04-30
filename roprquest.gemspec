@@ -36,8 +36,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'pastel'
   spec.add_dependency 'random-word'
   spec.add_dependency 'rubocop'
+  spec.add_dependency 'ruby-progressbar'
   spec.add_dependency 'tty-prompt'
   spec.add_dependency 'tty-spinner'
-  spec.add_dependency 'ruby-progressbar'
 end
 # rubocop:enable Metrics/BlockLength
