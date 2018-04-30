@@ -1,6 +1,5 @@
-require_relative 'roprquest/version'
 require_relative 'utils/utils'
-require_relative 'quests/quests'
+require_relative 'roprquest/quests/quests'
 
 Login.new.login
 

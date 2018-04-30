@@ -1,5 +1,5 @@
 require 'yaml/store'
-require_relative '../utils/utils'
+require_relative '../../utils/utils'
 require_relative '../distractions/distractions'
 
 # Workspace setup miniquest

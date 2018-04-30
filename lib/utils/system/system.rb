@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require_relative '../../../distractions/activities'
+require_relative '../../roprquest/distractions/activities'
 require 'tty-prompt'
 require 'timeout'
 

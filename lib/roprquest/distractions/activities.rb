@@ -1,5 +1,5 @@
 require 'yaml/store'
-require_relative '../utils/utils'
+require_relative '../../utils/utils'
 
 # Workspace setup miniquest
 class Activity
