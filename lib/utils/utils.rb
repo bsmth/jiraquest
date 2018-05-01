@@ -3,6 +3,7 @@
 require_relative 'prompts'
 require_relative 'reporter'
 require_relative 'game/login'
+require_relative 'game/score'
 require 'tty-spinner'
 
 # Some basic utilities

@@ -9,12 +9,15 @@ class Setup
   def initialize
     @store = YAML::Store.new('data.yml')
     @user = @store.transaction { @store[:user] }
+    @prompt = TTY::Prompt.new
   end
 
   def login
-    puts "Your first Quest is 'Log In'\n"
+    @prompt.ok("\nYour first Quest is 'Set up your Work Environment'
+Can you avoid distractions and get your system ready to start collecting ROPRs?\nLet's Begin:\n\n")
     vpn if boot
     workspace
+    Reporter.new.quest_complete
   end
 
   def boot
