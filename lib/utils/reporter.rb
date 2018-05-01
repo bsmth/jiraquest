@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require_relative 'figlet'
-require_relative 'login'
+require_relative 'game/login'
 
 # Simple Console Reporting or usage instructions
 class Reporter

@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'roprquest/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'roprquest'
+  spec.name          = 'ROPRQuest'
   spec.version       = Roprquest::VERSION
   spec.authors       = ['tcob']
   spec.email         = ['briantcob@gmail.com']
@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'pastel'
   spec.add_dependency 'random-word'
   spec.add_dependency 'rubocop'
-  spec.add_dependency 'rufus-scheduler'
+  spec.add_dependency 'ruby-progressbar'
   spec.add_dependency 'tty-prompt'
   spec.add_dependency 'tty-spinner'
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'yaml/store'
-require_relative 'utils'
+require_relative '../utils'
 
 # Logs in users
 class Login

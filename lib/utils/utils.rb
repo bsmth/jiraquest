@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'prompts/prompts'
+require_relative 'prompts'
 require_relative 'reporter'
-require_relative 'login'
+require_relative 'game/login'
 require 'tty-spinner'
 
 # Some basic utilities

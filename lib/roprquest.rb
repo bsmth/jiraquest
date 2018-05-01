@@ -1,6 +1,7 @@
-require_relative 'roprquest/version'
+# frozen_string_literal: true
+
 require_relative 'utils/utils'
-require_relative 'quests/quests'
+require_relative 'roprquest/quests/quests'
 
 Login.new.login
 
