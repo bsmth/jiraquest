@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'utils/utils'
 require_relative 'roprquest/quests/quests'
 

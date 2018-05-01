@@ -1,11 +1,21 @@
+# frozen_string_literal: true
+
+require_relative 'terminal'
 require_relative '../../roprquest/distractions/activities'
 require 'tty-prompt'
+require 'ruby-progressbar'
 require 'timeout'
 
 # Simple User Prompts
 class System
   def initialize
     @prompt = TTY::Prompt.new
+    form = "\e[0;34m%t: |%B|\e[0m"
+  end
+
+  def vpn
+    Terminal.new.two_factor
+    Terminal.new.r_progress(100)
   end
 
   def boot
@@ -18,11 +28,10 @@ class System
     end
   end
 
-  def vpn
+  def stress_vpn
     Timeout.timeout(1) do
-      @prompt.ask('Please enter your VPNs 2FA PIN:')
+      vpn
     end
-    # progress
   rescue Timeout::Error
     @prompt.warn('The 2FA timed out, TYPE FASTER')
     vpn
@@ -30,9 +39,8 @@ class System
 
   def vpn_expired
     @prompt.error('Your VPN session has expired!')
-    @prompt.ask('Please enter your 2FA VPN PIN:')
-    puts 'connecting'
-    # progress
+    Terminal.new.two_factor
+    Terminal.new.r_progress(100)
   end
 
   def ide_update
@@ -48,14 +56,18 @@ class System
   def workspace
     @result = case ide_update
               when 1 then updating
-              when 2 then vpn
+              when 2 then distract
               end
-    # @input_date = ask_date
     @result
+  end
+
+  def distract
+    Activity.new.choose
+    vpn_expired
   end
 
   def updating
     puts 'Updating IDE'
-    # progress
+    Terminal.new.amazing_update
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml/store'
 require_relative '../../utils/utils'
 require_relative '../distractions/distractions'
@@ -10,14 +12,13 @@ class Setup
   end
 
   def login
-    puts "Your first Quest is 'Log In'"
+    puts "Your first Quest is 'Log In'\n"
     vpn if boot
-    # ide_update
+    workspace
   end
 
   def boot
     System.new.boot
-    # progress bar
   end
 
   def vpn
@@ -26,5 +27,9 @@ class Setup
 
   def ide_update
     System.new.ide_update
+  end
+
+  def workspace
+    System.new.workspace
   end
 end
