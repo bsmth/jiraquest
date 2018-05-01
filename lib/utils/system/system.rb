@@ -69,5 +69,7 @@ class System
   def updating
     puts 'Updating IDE'
     Terminal.new.amazing_update
+    @prompt.warn('You updated your IDE, but lost work on 1 ROPR.')
+    Score.new.update_and_print(-1)
   end
 end

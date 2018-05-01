@@ -44,9 +44,11 @@ class Login
       @user = Prompter.new.user
       store[:user] = @user
     end
+    reset_data
   end
 
   def reset_data
+    Score.new.reset_all
     data = Activity.new.list_distractions
     @distractions = Array.new(data.length, {})
     data.each_with_index do |activity, i|

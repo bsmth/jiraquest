@@ -31,4 +31,12 @@ class Reporter
       @spinner.error("❌  #{message}\n\n")
     end
   end
+
+  def quest_complete
+    system 'clear'
+    Fig.new.ropr_user
+    success('Congratulations! You completed a Quest!')
+    Score.new.update_quests(1)
+    Score.new.report_quests
+  end
 end
