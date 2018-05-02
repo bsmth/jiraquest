@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'tty-prompt'
+require 'tty-spinner'
 
 # Simple User Prompts
 class Prompter
@@ -18,5 +19,10 @@ class Prompter
 
   def ask_end_date
     Time.parse(@prompt.ask('Enter an end date (Y/M/D):'))
+  end
+
+  def seconds_to_str(seconds)
+    ["#{seconds / 3600}h", "#{seconds / 60 % 60}m", "#{seconds % 60}s"]
+      .select { |str| str =~ /[1-9]/ }.join(' ')
   end
 end

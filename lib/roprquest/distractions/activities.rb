@@ -8,11 +8,19 @@ class Activity
   def initialize
     @store = YAML::Store.new('data.yml')
     @prompt = TTY::Prompt.new
-    @distractions = %w[water coffee walk text think complain chat]
+    @distractions_list = %w[water coffee walk text think complain chat]
   end
 
-  def list_distractions
-    @distractions
+  def list
+    @distractions_list
+  end
+
+  def read_distractions_count
+    @store.transaction { @store['distractions'] }
+  end
+
+  def read_warnings_count
+    @store.transaction { @store['warnings'] }
   end
 
   def coffee
@@ -88,5 +96,45 @@ class Activity
 
   def distract_count(distraction)
     @store['distractions'][distraction]
+  end
+
+  def warning_count(distraction)
+    @store['warnings'][distraction]
+  end
+
+  def update_warning(distraction)
+    @store.transaction { @store['warnings'][distraction] += 1 }
+  end
+
+  def warning
+    if coffee_armageddon
+      complain
+    else
+      distract_warning('already, you may lose a ROPR!')
+    end
+  end
+
+  def boot_warning
+    distract_warning('without even turning on your machine!')
+  end
+
+  def distract_warning(message)
+    dc = read_distractions_count
+    limits = dc.select { |_k, v| v > 4 }
+    limits.each do |distraction, count|
+      @prompt.error("Be careful, you have had #{count} #{distraction}s " + message)
+      update_warning(distraction)
+    end
+  end
+
+  def coffee_armageddon
+    dc = read_warnings_count
+    limits = dc.select { |_k, v| v > 1 }
+    limits.each do |distraction, _count|
+      @prompt.error('You were warned! You now lose TEN ROPRs!')
+      update_warning(distraction)
+      Score.new.update_points(-10)
+    end
+    true
   end
 end

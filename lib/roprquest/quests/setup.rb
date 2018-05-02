@@ -12,27 +12,15 @@ class Setup
     @prompt = TTY::Prompt.new
   end
 
-  def login
+  def quest
     @prompt.ok("\nYour first Quest is 'Set up your Work Environment'
 Can you avoid distractions and get your system ready to start collecting ROPRs?\nLet's Begin:\n\n")
-    vpn if boot
-    workspace
-    Reporter.new.quest_complete
-  end
-
-  def boot
-    System.new.boot
-  end
-
-  def vpn
-    System.new.vpn
-  end
-
-  def ide_update
+    System.new.vpn if System.new.boot
     System.new.ide_update
-  end
-
-  def workspace
-    System.new.workspace
+    @prompt.warn('You updated your IDE, but lost work on 1 ROPR.')
+    sleep 1
+    Score.new.update_and_print(-1)
+    sleep 1
+    Reporter.new.quest_complete
   end
 end

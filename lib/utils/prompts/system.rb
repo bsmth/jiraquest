@@ -16,11 +16,13 @@ class System
   def vpn
     Terminal.new.two_factor
     Terminal.new.r_progress(100)
+    Reporter.new.success('Jacked into the network.')
   end
 
   def boot
+    Activity.new.boot_warning
     if @prompt.yes?('Would you like to boot up your work machine?')
-      puts 'booting'
+      Reporter.new.timed_success('Booted Up!', 3)
       true
     else
       Activity.new.choose
@@ -38,38 +40,27 @@ class System
   end
 
   def vpn_expired
-    @prompt.error('Your VPN session has expired!')
+    @prompt.error("\nYou return to your machine to find your VPN session has expired!")
     Terminal.new.two_factor
     Terminal.new.r_progress(100)
   end
 
   def ide_update
-    @prompt.warn('There is an IDE update')
-    @mode = @prompt.select('what would you like to do') do |menu|
-      menu.default 1
-      menu.choice name: 'Update now', value: 1
-      menu.choice name: 'Don\'t update', value: 2
-    end
-    @mode
+    @prompt.warn("\nThere is an IDE update")
+    ide_distractions until @prompt.yes?('Do you update your IDE now?')
+    updating
   end
 
-  def workspace
-    @result = case ide_update
-              when 1 then updating
-              when 2 then distract
-              end
-    @result
-  end
-
-  def distract
+  def ide_distractions
     Activity.new.choose
+    Activity.new.warning
     vpn_expired
+    Notifications.new.reddit
+    Notifications.new.warning
   end
 
   def updating
     puts 'Updating IDE'
     Terminal.new.amazing_update
-    @prompt.warn('You updated your IDE, but lost work on 1 ROPR.')
-    Score.new.update_and_print(-1)
   end
 end
