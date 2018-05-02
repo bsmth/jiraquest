@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'figlet'
-require_relative 'game/login'
+require_relative '../game/game'
 
 # Simple Console Reporting or usage instructions
 class Reporter
@@ -21,20 +21,16 @@ class Reporter
     @spinner.success(@pastel.green(message))
   end
 
-  def validate(message)
+  def timed_success(message, seconds)
     @spinner.auto_spin
-    yes = true
-    if yes
-      # user = Query.new.user
-      success("✅  #{message}\n")
-    else
-      @spinner.error("❌  #{message}\n\n")
-    end
+    sleep seconds
+    success("✅  #{message}\n")
   end
 
   def quest_complete
+    Fig.new.user_message('ROPRd HARD')
+    sleep 3
     system 'clear'
-    Fig.new.ropr_user
     success('Congratulations! You completed a Quest!')
     Score.new.update_quests(1)
     Score.new.report_quests

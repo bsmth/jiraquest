@@ -23,4 +23,8 @@ class Fig
   def ropr_user
     puts @figlet["#{@user} ROPRQuest"]
   end
+
+  def user_message(message)
+    puts @figlet["#{@user} #{message}"]
+  end
 end

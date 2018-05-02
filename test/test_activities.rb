@@ -2,6 +2,7 @@
 
 require 'test/unit'
 require_relative '../lib/utils/utils'
+require_relative '../lib/roprquest/distractions/distractions'
 require_relative 'suppress_output'
 
 class TestReporter < Test::Unit::TestCase

@@ -49,15 +49,20 @@ class Login
 
   def reset_data
     Score.new.reset_all
-    data = Activity.new.list_distractions
-    @distractions = Array.new(data.length, {})
+    reset_list(Activity.new.list, 'distractions')
+    reset_list(Activity.new.list, 'warnings')
+    reset_list(Notifications.new.list, 'notifications')
+  end
+
+  def reset_list(data, type)
+    @list = Array.new(data.length, {})
     data.each_with_index do |activity, i|
-      @distractions[i][activity] = 0
+      @list[i][activity] = 0
     end
-    @distractions.uniq!
+    @list.uniq!
     @store.transaction do
       store = @store
-      store['distractions'] = @distractions[0]
+      store[type] = @list[0]
     end
   end
 
