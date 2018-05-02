@@ -3,8 +3,7 @@
 require 'tty-prompt'
 require 'tty-spinner'
 
-# Simple User Prompts
-class Prompter
+class Dateutil
   def initialize
     @prompt = TTY::Prompt.new
   end
