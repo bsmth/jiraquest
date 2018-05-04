@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ROPRQuest (0.0.1)
+    ROPRQuest (0.0.2)
       figlet
       pastel
       random-word
