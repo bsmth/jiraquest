@@ -62,7 +62,7 @@ class Activity
     dc = read_distractions_count
     music = dc.select { |k, _v| k == 'tune' }
     played = music['tune']
-    if (played % 2 == 0)
+    if played.even?
       play_tune('why', 'does your love', 'hurt so much')
     else
       play_tune('words', 'don\'t come easy', 'to me')
