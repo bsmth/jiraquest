@@ -46,7 +46,7 @@ class Terminal
 
   def two_factor
     @prompt.mask('Please enter your VPNs 2FA PIN:') do |q|
-      q.validate /[0-9]{6}/, 'Must be a six digit PIN!'
+      q.validate /^\d{6}$/, 'Must be a six digit PIN!'
     end
   end
 end
