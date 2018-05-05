@@ -19,7 +19,7 @@ rake
 ## Testing
 
 ```bash
-rake run
+rake test
 ```
 
 ## Bumping the version
