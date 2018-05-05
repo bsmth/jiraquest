@@ -8,7 +8,7 @@ class Activity
   def initialize
     @store = YAML::Store.new('data.yml')
     @prompt = TTY::Prompt.new
-    @distractions_list = %w[water coffee walk text think complain chat]
+    @distractions_list = %w[water coffee walk text think complain chat tune]
   end
 
   def list
@@ -58,6 +58,25 @@ class Activity
     update_distraction('think')
   end
 
+  def tune
+    dc = read_distractions_count
+    music = dc.select { |k, _v| k == 'tune' }
+    played = music['tune']
+    if played.even?
+      play_tune('why', 'does your love', 'hurt so much')
+    else
+      play_tune('words', 'don\'t come easy', 'to me')
+    end
+    update_distraction('tune')
+  end
+
+  def play_tune(*lines)
+    for line in lines
+      puts "🎶 #{line} 🎶"
+      sleep(1)
+    end
+  end
+
   # rubocop:disable Metrics/MethodLength
   def activities
     @mode = @prompt.select('Do something else') do |menu|
@@ -69,6 +88,7 @@ class Activity
       menu.choice name: 'Complain', value: 5
       menu.choice name: 'Go for a walk', value: 6
       menu.choice name: 'Think', value: 7
+      menu.choice name: 'Play some tunes', value: 8
     end
     @mode
   end
@@ -84,6 +104,7 @@ class Activity
                    when 5 then complain
                    when 6 then walk
                    when 7 then think
+                   when 8 then tune
                    end
 
     @distraction

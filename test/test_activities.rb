@@ -17,6 +17,7 @@ class TestReporter < Test::Unit::TestCase
         Activity.new.complain
         Activity.new.walk
         Activity.new.think
+        Activity.new.tune
         Login.new.reset_data
       end
     end
