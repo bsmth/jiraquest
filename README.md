@@ -6,10 +6,28 @@
 
 ## Install
 
-    $ bundle install
+```bash
+$ bundle install
+```
 
 ## Begin ROPRing
 
 ```bash
+rake
+```
+
+## Testing
+
+```bash
 rake run
 ```
+
+## Bumping the version
+
+Edit the version number in `lib/roprquest/version.rb`
+
+```bash
+bundle install
+```
+
+The `Gemfile.lock` file should be checked in.
