@@ -24,7 +24,7 @@ rake run
 
 ## Bumping the version
 
-Edit the version number in `lib/roprquest/version.rb`
+Edit the version number in `lib/roprquest/version.rb` then run:
 
 ```bash
 bundle install
