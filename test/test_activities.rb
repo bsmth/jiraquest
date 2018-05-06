@@ -6,7 +6,39 @@ require_relative '../lib/roprquest/distractions/distractions'
 require_relative 'suppress_output'
 
 class TestReporter < Test::Unit::TestCase
-  def test_Activites
+  def test_read_warnings
+    assert_nothing_raised { Activity.new.read_warnings_count }
+  end
+
+  def test_update_warning
+    assert_nothing_raised do
+      Login.new.reset_data
+      dist = Activity.new.list.first
+      Activity.new.update_warning(dist)
+    end
+  end
+
+  def test_update_distraction
+    assert_nothing_raised do
+      Login.new.reset_data
+      dist = Activity.new.list.first
+      Activity.new.update_distraction(dist)
+    end
+  end
+
+  def test_armageddon
+    assert_nothing_raised do
+      Activity.new.coffee_armageddon
+    end
+  end
+
+  def test_boot_warning
+    assert_nothing_raised do
+      Activity.new.boot_warning
+    end
+  end
+
+  def test_all_activites
     assert_nothing_raised do
       suppress_output do
         Login.new.reset_data
@@ -17,9 +49,9 @@ class TestReporter < Test::Unit::TestCase
         Activity.new.complain
         Activity.new.walk
         Activity.new.think
-        Activity.new.tune
+        2.times {Activity.new.tune}
         Login.new.reset_data
       end
     end
-  end
+  end   
 end
