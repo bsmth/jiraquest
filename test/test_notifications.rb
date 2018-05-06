@@ -21,7 +21,8 @@ class TestNotifications < Test::Unit::TestCase
   end
 
   def test_warning
-    suppress_output do 
+    suppress_output do
+      Login.new.reset_data
       Notifications.new.warning  
     end
   end
