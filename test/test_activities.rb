@@ -9,6 +9,14 @@ class TestReporter < Test::Unit::TestCase
   def test_read_warnings
     assert_nothing_raised { Activity.new.read_warnings_count }
   end
+  def test_distract_count
+    assert_nothing_raised do
+      Login.new.reset_data
+      4.times do
+        Activity.new.update_warning('water')
+      end
+    end
+  end
 
   def test_update_warning
     assert_nothing_raised do
