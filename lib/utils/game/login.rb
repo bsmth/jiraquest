@@ -48,10 +48,11 @@ class Login
   end
 
   def reset_data
-    Score.new.reset_all
+    Score.new.reset_score
     reset_list(Activity.new.list, 'distractions')
     reset_list(Activity.new.list, 'warnings')
     reset_list(Notifications.new.list, 'notifications')
+    reset_list(Quests.new.list, 'quests')
   end
 
   def reset_list(data, type)

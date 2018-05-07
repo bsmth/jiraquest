@@ -16,4 +16,17 @@ class TestReporter < Test::Unit::TestCase
       suppress_output { Reporter.new.success('cool') }
     end
   end
+
+
+  def test_t_success
+    assert_nothing_raised do
+      suppress_output { Reporter.new.timed_success('Coool message', 1) }
+    end
+  end
+
+  def test_quest_complete
+    assert_nothing_raised do
+      suppress_output { Reporter.new.quest_complete('Test') }
+    end
+  end
 end

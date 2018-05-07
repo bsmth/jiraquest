@@ -10,7 +10,6 @@ require 'timeout'
 class System
   def initialize
     @prompt = TTY::Prompt.new
-    form = "\e[0;34m%t: |%B|\e[0m"
   end
 
   def vpn

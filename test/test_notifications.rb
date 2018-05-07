@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'test/unit'
+require_relative '../lib/utils/utils.rb'
+require_relative '../lib/roprquest/quests/quests'
 require_relative '../lib/roprquest/distractions/distractions'
 
 class TestNotifications < Test::Unit::TestCase
