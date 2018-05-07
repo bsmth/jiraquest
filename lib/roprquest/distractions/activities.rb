@@ -71,7 +71,7 @@ class Activity
   end
 
   def play_tune(*lines)
-    for line in lines
+    lines.each do |line|
       puts "🎶 #{line} 🎶"
       sleep(1)
     end

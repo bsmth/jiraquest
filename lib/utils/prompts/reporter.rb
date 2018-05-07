@@ -27,12 +27,11 @@ class Reporter
     success("✅  #{message}\n")
   end
 
-  def quest_complete
+  def quest_complete(quest)
     Fig.new.user_message('ROPRd HARD')
     sleep 3
     system 'clear'
-    success('Congratulations! You completed a Quest!')
-    Score.new.update_quests(1)
-    Score.new.report_quests
+    success("Congratulations! You completed the #{quest} Quest!")
+    Score.new.update_quests(quest)
   end
 end

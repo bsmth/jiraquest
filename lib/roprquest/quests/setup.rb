@@ -13,14 +13,16 @@ class Setup
   end
 
   def quest
-    @prompt.ok("\nYour first Quest is 'Set up your Work Environment'
-Can you avoid distractions and get your system ready to start collecting ROPRs?\nLet's Begin:\n\n")
+    @prompt.warn("\nQuest 1\n")
+    @prompt.ok("'Set up your Work Environment'\n")
+    puts 'Can you avoid distractions and get your system ready to start collecting ROPRs?'
+    @prompt.warn("Begin:\n\n")
     System.new.vpn if System.new.boot
     System.new.ide_update
     @prompt.warn('You updated your IDE, but lost work on 1 ROPR.')
     sleep 1
     Score.new.update_and_print(-1)
     sleep 1
-    Reporter.new.quest_complete
+    Reporter.new.quest_complete('Setup')
   end
 end

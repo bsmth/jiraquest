@@ -3,6 +3,7 @@
 require 'tty-prompt'
 require 'tty-spinner'
 
+# Some basic utils for handling date / time
 class Dateutil
   def initialize
     @prompt = TTY::Prompt.new

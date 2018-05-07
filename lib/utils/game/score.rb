@@ -8,7 +8,6 @@ class Score
   def initialize
     @store = YAML::Store.new('data.yml')
     @score = @store.transaction { @store[:score] }
-    @quests = @store.transaction { @store[:quests] }
   end
 
   # ROPRS ==========================
@@ -40,27 +39,15 @@ class Score
     puts "You have completed #{@quests} Quests"
   end
 
-  def reset_quests
+  def update_quests(quest)
     @store.transaction do
       store = @store
-      store[:quests] = 0
-    end
-  end
-
-  def update_quests(number)
-    @store.transaction do
-      store = @store
-      store[:quests] += number
+      store['quests'][quest.to_s] = 'DONE'
     end
   end
 
   def update_quests_and_print(number)
     update_quests(number)
     report_quests
-  end
-
-  def reset_all
-    reset_quests
-    reset_score
   end
 end

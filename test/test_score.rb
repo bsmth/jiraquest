@@ -26,15 +26,14 @@ class TestScore < Test::Unit::TestCase
   def test_add_quests
     assert_nothing_raised do
       suppress_output do
-        Score.new.reset_quests
         Score.new.report_quests
-        Score.new.update_quests(20)
-        Score.new.update_quests_and_print(20)
+        Score.new.update_quests('SETUP')
+        Score.new.update_quests_and_print('SETUP')
       end
     end
   end
 
   def test_reset_data
-    assert_nothing_raised { Score.new.reset_all}
+    assert_nothing_raised { Score.new.reset_score}
   end
 end
