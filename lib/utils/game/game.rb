@@ -2,3 +2,4 @@
 
 require_relative 'login'
 require_relative 'score'
+require_relative 'chievs'
