@@ -9,5 +9,4 @@ Login.new.login
 system 'clear'
 Reporter.new.welcome
 
-# Setup.new.quest
-Button.new.quest
+Quests.new.launch_quest

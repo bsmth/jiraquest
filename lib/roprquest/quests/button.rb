@@ -1,18 +1,26 @@
 # frozen_string_literal: true
 
 require 'tty-prompt'
+require 'utils/utils'
 
 # Workspace setup miniquest
 class Button
   def initialize
     @store = DATA
     @prompt = TTY::Prompt.new
+    @user = @store.transaction { @store[:user] }
   end
 
   def quest
     @prompt.warn("\nQuest 2")
     @prompt.ok("'Press The Button'")
-    5.times { button? }
+    if @user[/[K|k]ristian/]
+      button?
+      Reporter.new.success('Great!')
+    else
+      4.times { button? }
+      Morale.new.update_and_print(-2)
+    end
     sleep 1
     Score.new.update_and_print(1)
     sleep 1

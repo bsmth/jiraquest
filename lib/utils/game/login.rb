@@ -50,6 +50,7 @@ class Login
 
   def reset_data
     Score.new.reset_score
+    Morale.new.reset_morale
     reset_list(Achievement.new.list, 'achievements')
     reset_list(Activity.new.list, 'distractions')
     reset_list(Activity.new.list, 'warnings')
