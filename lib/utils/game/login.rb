@@ -27,6 +27,7 @@ class Login
     else
       create_user
     end
+    Achievement.new.employee_otm
   end
 
   # Ask to resume, if not, ask to delete user
@@ -49,6 +50,7 @@ class Login
 
   def reset_data
     Score.new.reset_score
+    reset_list(Achievement.new.list, 'achievements')
     reset_list(Activity.new.list, 'distractions')
     reset_list(Activity.new.list, 'warnings')
     reset_list(Notifications.new.list, 'notifications')
