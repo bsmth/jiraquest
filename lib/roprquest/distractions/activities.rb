@@ -92,7 +92,6 @@ class Activity
     end
     @mode
   end
-  # rubocop:enable Metrics/MethodLength
 
   # rubocop:disable Metrics/CyclomaticComplexity
   def choose
@@ -110,6 +109,7 @@ class Activity
     @distraction
   end
   # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/MethodLength
 
   def update_distraction(distraction)
     @store.transaction { @store['distractions'][distraction] += 1 }

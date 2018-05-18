@@ -6,23 +6,40 @@
 
 ## Install
 
+Installation can be done via rubygems:
+
 ```bash
-$ bundle install
+gem install roprquest
 ```
 
 ## Begin ROPRing
 
 ```bash
-rake
+roprquest
 ```
 
-## Testing
+## Development
+
+Clone the repository (or [fork the repo](https://help.github.com/articles/fork-a-repo/)):
+
+```bash
+git clone https://github.com/tcob/ROPRQUEST.git
+```
+
+Dependencies are managed using `bundler`
+
+```bash
+gem install bundler
+bundle install
+```
+
+Tests can be run using `rake`:
 
 ```bash
 rake test
 ```
 
-## Bumping the version
+### Bumping the version
 
 Edit the version number in `lib/roprquest/version.rb` then run:
 
