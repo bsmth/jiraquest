@@ -4,8 +4,6 @@ PATH
     roprquest (0.0.2)
       figlet
       pastel
-      random-word
-      rubocop
       ruby-progressbar
       tty-prompt
       tty-spinner
@@ -30,7 +28,6 @@ GEM
     powerpack (0.1.1)
     rainbow (3.0.0)
     rake (10.5.0)
-    random-word (2.1.0)
     rubocop (0.56.0)
       parallel (~> 1.10)
       parser (>= 2.5)
@@ -71,8 +68,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  rake (~> 10.0)
+  rake
   roprquest!
+  rubocop
   simplecov
   test-unit
 

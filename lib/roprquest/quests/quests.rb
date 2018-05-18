@@ -2,6 +2,7 @@
 
 require_relative 'setup'
 
+# A class to manage quests
 class Quests
   def initialize
     @store = DATA
