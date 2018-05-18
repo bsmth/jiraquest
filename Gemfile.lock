@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ROPRQuest (0.0.2)
+    roprquest (0.0.2)
       figlet
       pastel
       random-word
@@ -70,9 +70,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ROPRQuest!
   bundler
   rake (~> 10.0)
+  roprquest!
   simplecov
   test-unit
 
