@@ -8,20 +8,20 @@ rvm:
 - 2.5.1
 before_install: gem install bundler
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 env:
   global:
-    - CC_TEST_REPORTER_ID=8db13b5426f53feb5dc03024a07bf4440018c3bcf0f857fa80c68f4d05c224d7
+  - CC_TEST_REPORTER_ID=8db13b5426f53feb5dc03024a07bf4440018c3bcf0f857fa80c68f4d05c224d7
 script:
 - bundle exec rake test
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 deploy:
   provider: rubygems
   api_key:
-    secure: TKNqMYZRxQn5AcXqB05mo1LtcDF8GNYVXtjsApgFi4XX7gx18CwnUuoqRLROcO+PuEkeSvgbdP2yK8FOvcDK+TJtX+5rm3TgQG7zUMB2scSSRcxp+t6lOYb7hPZJBr/uFqwbt/mZp4/dMEiDCgBuHGacXL55pWDo9Re1f0CgoXpJ2tfhDVs+m+ZOji9PgcjMQFjEJynqWJnSqDGbpmNKlISV8O2vx88PyoK8a3j/EKSdO+/aKjP2FLj7iWKUR5+9tEQJiRbWkwJxrJ3gn7Iw1K0lX/vAw6zhaXHMRIPQu/a/XtBwS/Rx00wooF0SSqSkaks2nOggd9O/VnknwmYdaebpgKsJvWh9YYhJNjUw03dVp9Hr0FVfBGhtj+Z4OW97WuBVfAPrOlbZVUsSXpbYNGuZyNeJEt3PeWWIqJlDSoGCWY8juMsC/loAFNw2a8ps1I4O2ooGtfk0I24gOkNiNhgL9GdRlsJSwC6NR8c59p+PlRN84ynU9Nh58l8L/gJ28cvB8gCObZ455ZlavV0BiJWrjyupBWvcBM6SkL7AYHNMKWV4X72FCxbBG/BI6dLSCeJnsws3PxpOuqSSrr74dmHvz9zEuTCs3NNHuL3wK7p8jS/MONxJf21EDFgeIuIIEe3ovxgu+ih6GbJo0EPw3mxOPQXotIyziw+A0pF852k=
-  gem: 'yes'
+    secure: Q1B+GkPBh7dVH6KsuB2/XjLiHAlEfVByQVio0gIkiVslbmjdiNR2jFNODV0VyDwRUM9i2vQSv6ba86D/CNU0fLmqWOhD1W64J3aObctt/EZwFOFvEsSnt/W5tFdY/DcwjWdyWZuQypelzbUO9sdtwx9qHimmic6x5E0ElmbRt1gcmVOYElmrxckzBcZj8S5VuvZOx+PtXIDYdE4bAjMFU4VU2Y0u0LxFm6TL4tsLJChaZhxa6ZCJcL7N7gG8xlRn5+CbzUfrRpjP1uyPaBritRYoJUA/7ib8rIHhL1crQOl98Hk65YieyO+RS10d2eVH6soXH9GnWjg09ceIUpFZDFFUjHlhcjTnOjZEFE9l0u7dAstIsal0ma11h5MD3F3KMctsUWj46Zpyr99SuEdsNV96Mbkee1RFlImycknp4Pr0zxnEHd9pn8PQD48mzccZXoSxDvz3y5UM87AjASGvjVwOrqxGa4IuVJ0+y0euIu8FgBY4we/B8rK1RoYHk6xv8se84x+km0D/akbvhbr3mzo5rmt7g/41QbYn+ENUGv8p5wsi8/1j2QmB2nmZicTnINWUn4bBbBkCc94ELR1ZtJtt8kiOJOOp4yWTJP/lo8Yg09oI5KGhPvugiD2imTgENAsMVtOfHo7+3xcIl2KZLzA9hGqxv5sTuPe/fj0d/2Y=
+  gem: roprquest
   on:
     repo: tcob/ROPRQUEST
