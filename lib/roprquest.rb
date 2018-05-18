@@ -9,4 +9,4 @@ Login.new.login
 system 'clear'
 Reporter.new.welcome
 
-Setup.new.quest
+Quests.new.launch_quest
