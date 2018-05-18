@@ -6,7 +6,7 @@ require_relative '../../utils/utils'
 # Workspace setup miniquest
 class Activity
   def initialize
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @prompt = TTY::Prompt.new
     @distractions_list = %w[water coffee walk text think complain chat tune]
   end

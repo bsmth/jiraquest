@@ -7,16 +7,16 @@ require_relative '../distractions/distractions'
 # Workspace setup miniquest
 class Setup
   def initialize
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @user = @store.transaction { @store[:user] }
     @prompt = TTY::Prompt.new
   end
 
   def quest
-    @prompt.warn("\nQuest 1\n")
-    @prompt.ok("'Set up your Work Environment'\n")
+    @prompt.warn("\nQuest 1")
+    @prompt.ok("'Set up your Work Environment'")
     puts 'Can you avoid distractions and get your system ready to start collecting ROPRs?'
-    @prompt.warn("Begin:\n\n")
+    @prompt.warn('Begin:')
     System.new.vpn if System.new.boot
     System.new.ide_update
     @prompt.warn('You updated your IDE, but lost work on 1 ROPR.')

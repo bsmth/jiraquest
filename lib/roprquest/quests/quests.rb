@@ -4,7 +4,7 @@ require_relative 'setup'
 
 class Quests
   def initialize
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @quests_list = %w[Setup]
   end
 

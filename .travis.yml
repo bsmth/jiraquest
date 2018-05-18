@@ -18,3 +18,8 @@ script:
 - bundle exec rake test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+deploy:
+  provider: rubygems
+  api_key:
+    secure: im9y4APQgejHtu2REPxRi6gW5kbxIjlBrsPOqGtsg3yojUza7WG1iVcQ9zg9ruRzDpUoi/OJfoDYY8SSNZjW97PX0eFrw2ZeuT/KY3+U5UzEXL/MspLV+LKi59gOY8dtGVC9y42X5a9FmFWDBBQqWw07VgpKkfLOI0lVOasdiu/nrqKqWR2wvQVtoTaQXn7OFZ+MBZ5uUGvim+lcb2WsC8m38s292lrKIHVkmzap3pnLoWWm1xMDpjUBfq9sudfH6Yq5RDaDiv2Qi1A6O+FmyTYGCr2NGa2qZK+MFfFkNMrBck4pMWKTPzlxCnD+CBViHtIBh3iMaWzjw5ya/bswLLKStraIE8ounAOgUuel9STf2pDqqitNfgswvhSTRXXp9R+MxVBWNMZacRgDwlWZL35EE1ggNXGz2VeRWsykOL6dYweVGUR2Lqn3351F9xryrMPsoadcjnGoLV4LMz1Cikvlclr+t2sKi9U++FXCC78jIuGcZLz/RPzhfRqYHqnn7oAUkA36ceJvQ0T0ls7+5M9Z88n26bchdLyonbN5PpMGufBc3gWVXE4buSo4ktroOwqSIpmyrtSIAGw96oJqsx2ffLrXkeD1fskailBXxfpNFHF//AjKg/9Y+lcRK5q1xwoPs0+G1TExremIMuDhOJET9pBDC0JYN2WIr5g4NSQ=
+  gem: roprquest
