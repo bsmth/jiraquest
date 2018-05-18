@@ -6,7 +6,7 @@ require_relative '../utils'
 # Keeps track of users score
 class Score
   def initialize
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @score = @store.transaction { @store[:score] }
   end
 

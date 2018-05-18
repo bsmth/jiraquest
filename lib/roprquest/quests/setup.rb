@@ -7,7 +7,7 @@ require_relative '../distractions/distractions'
 # Workspace setup miniquest
 class Setup
   def initialize
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @user = @store.transaction { @store[:user] }
     @prompt = TTY::Prompt.new
   end

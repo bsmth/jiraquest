@@ -6,8 +6,8 @@ require 'yaml/store'
 # Some ultra cool figlets
 class Fig
   def initialize
-    @store = YAML::Store.new(File.expand_path('../../../assets/data.yml', __dir__))
-    @font = Figlet::Font.new(File.expand_path('../../../assets/fonts/big.flf', __dir__))
+    @store = DATA
+    @font = FIGLET
     @figlet = Figlet::Typesetter.new(@font)
     @user = @store.transaction { @store[:user] }
   end

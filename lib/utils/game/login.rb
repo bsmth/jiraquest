@@ -6,7 +6,7 @@ require_relative '../utils'
 # Logs in users
 class Login
   def initialize
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @user = @store.transaction { @store[:user] }
   end
 

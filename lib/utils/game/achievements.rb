@@ -8,7 +8,7 @@ require_relative 'score'
 class Achievement
   def initialize
     @pastel = Pastel.new
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @user = @store.transaction { @store[:user] }
     @chieve_list = %w[employee_otm]
     @spinner = TTY::Spinner.new('[:spinner] :title', success_mark: @pastel.green('+'))

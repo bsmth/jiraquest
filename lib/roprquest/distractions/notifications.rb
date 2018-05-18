@@ -5,7 +5,7 @@ require 'ruby-progressbar'
 # Simple User Prompts
 class Notifications
   def initialize
-    @store = YAML::Store.new('data.yml')
+    @store = DATA
     @prompt = TTY::Prompt.new
     @notifications_list = %w[slack reddit text email]
   end
