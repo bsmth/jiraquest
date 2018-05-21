@@ -8,7 +8,7 @@ rvm:
 - 2.5.1
 before_install: gem install bundler
 before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64  > ./cc-test-reporter
 - chmod +x ./cc-test-reporter
 - "./cc-test-reporter before-build"
 env:
@@ -21,7 +21,7 @@ after_script:
 deploy:
   provider: rubygems
   api_key:
-    secure: lYxsEWIGSqowbSviR4/FaBoLERHBpHEwxZSzXfoOg2a5tSjP1COua1/LElJGtYkUITNC+wvh9gCDdTVLnSYvVTjKpmORW9Im8bgLuuDwzcHauLkTqMg7GUL6nR9CfNwpgR7m3Z+gQpeA8WLg2gjz+boyDjRwMjiiZ5RDtSIupf2ofHl4PaAx0X187Obkaaa3oRGJHZhcZQvt5KRadIPF4AL4hqSszCHAHoVmRV2Ykj3j1+eo+GvfI+RW4G2Ji/j6vjdVkDGDylBj+XM46Du83MliwU9fFsEsL3fhjsEzaf5Pp8vJwkVk9ZwfD4jp45sRoYPw9EJrelndIjk2i2htd0Or61iWfzRwRI6RYtklOx+G7T82IYaA28cZTlvjLdtlkd9dNxDnUpKj6OFDIaVJwljPutg9UW2E3vcmal/cbfw1XEc/LItw948EsStB75WPawmkZmD0/B7xDyEc+FQmnO7e+FyUInvIVPG0+UhNI6gJt1T2xm7PLb0YFJwuO63AQKXwVJCOuv1Mr+nMc/9DFpqQswRos1e69s9vCDbbQOFqpTjFXHc7+3eobd+FxRVHYN8AyyhI3FEaaufARXBFpGPlLcqaLu3CRgPoDv2U7ZACuNNLA0UKP9WZu2SEhhZ8csKzf/V2BGmIjO3itYBPtv6RMh6nfOFjlsodxMnXqQc=
+    secure: AT+dGBYhed2PtL9QrxPEcfdiFUbQNhVB6QsaSox8jKdVZuSHKkUphkHAKgYyFYmrxQ32WfDWucot6/yxS21TE4M1ByWAicIhuzpnRewkEijy+UU3AmcQqzYolgMm4/HovwERs0ErOtr1zQ+rws5udmGh1VrZ8e28AFnJPGlX3DQUjRT44f5QebFmAmotIci9zjQSSEnbK0vU0GOIVmHy9wd1y4OMHyvqwy3R5pWVf7+SLuo8IgVXwxjHP4QhnoHxiYGjUVJgoiVI7rgL1rgDHedDOF75+WbjLDLMF7sWLanGST28GRoqkyAIfhSpsagwG91OmtwdmfUlVJWV7EwWmOTOrFW5b92VeHB2MN2DMlXK1IYZeFPbXPj3MnLYEuJDYTEztMMQoY+MriDqTtNrqbtRyqIXKzFC8MRT/lFjWskFt+mW3hOLz33DXleP7RMP4k661YhX4yQM6lCkPP1u8UEgu16abGSlV+IDtZGL+dgpnU2WYOI+6qJ1jtWO3zVZjrwBl6M7f0PalR4vbz4DrxCHbmNEGWan6K4jZAFvxPzYV/lQZTKNwOks6IWG6B+3SfvcpIMEporAxKdpMqfp8M5H7pRMh4nRsJDEeft6Oa+j4BScWceQ2XNDabXmmBUySw/P54Qxz2hGSIxheVOSI171yeNwmaNieiuEX87kFaE=
   gem: jiraquest
   on:
     repo: tcob/jiraquest
