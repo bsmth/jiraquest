@@ -43,7 +43,7 @@ class Notifications
     limits = dc.select { |_k, v| v > 2 }
     limits.each do |distraction, _count|
       @prompt.error("Be careful, you are spending a lot of time #{distraction}ing, "\
-        'you may lose ROPRs!')
+        'you may lose jiras!')
       update_warning(distraction)
     end
     false

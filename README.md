@@ -1,22 +1,22 @@
-[![Gem Version](https://badge.fury.io/rb/roprquest.svg)](https://badge.fury.io/rb/roprquest)
-[![Build Status](https://travis-ci.org/tcob/ROPRQUEST.svg?branch=master)](https://travis-ci.org/tcob/ROPRQUEST)
-[![Maintainability](https://api.codeclimate.com/v1/badges/15f82ac543afadb4f995/maintainability)](https://codeclimate.com/github/tcob/ROPRQUEST/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/15f82ac543afadb4f995/test_coverage)](https://codeclimate.com/github/tcob/ROPRQUEST/test_coverage)
+[![Gem Version](https://badge.fury.io/rb/jiraquest.svg)](https://badge.fury.io/rb/jiraquest)
+[![Build Status](https://travis-ci.org/tcob/jiraquest.svg?branch=master)](https://travis-ci.org/tcob/jiraquest)
+[![Maintainability](https://api.codeclimate.com/v1/badges/15f82ac543afadb4f995/maintainability)](https://codeclimate.com/github/tcob/jiraquest/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/15f82ac543afadb4f995/test_coverage)](https://codeclimate.com/github/tcob/jiraquest/test_coverage)
 
-# ROPRQUEST
+# jiraquest
 
 ## Install
 
 Installation can be done via rubygems:
 
 ```bash
-gem install roprquest
+gem install jiraquest
 ```
 
-## Begin ROPRing
+## Begin jiraquesting
 
 ```bash
-roprquest
+jiraquest
 ```
 
 ## Development
@@ -24,7 +24,7 @@ roprquest
 Clone the repository (or [fork the repo](https://help.github.com/articles/fork-a-repo/)):
 
 ```bash
-git clone https://github.com/tcob/ROPRQUEST.git
+git clone https://github.com/tcob/jiraquest.git
 ```
 
 Dependencies are managed using `bundler`
@@ -42,7 +42,7 @@ rake test
 
 ### Bumping the version
 
-Edit the version number in `lib/roprquest/version.rb` then run:
+Edit the version number in `lib/jiraquest/version.rb` then run:
 
 ```bash
 bundle install

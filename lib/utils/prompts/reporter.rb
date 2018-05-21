@@ -8,13 +8,13 @@ class Reporter
   def initialize
     @pastel = Pastel.new
     @prompt = TTY::Prompt.new
-    format = "[#{@pastel.yellow(':spinner')}] " + @pastel.yellow('ROPRing...')
+    format = "[#{@pastel.yellow(':spinner')}] " + @pastel.yellow('jiraing...')
     @spinner = TTY::Spinner.new(format, success_mark: @pastel.green('+'))
   end
 
   def welcome
-    Fig.new.roprquest
-    success("🤖  Welcome to ROPRQuest, #{Login.new.current_user}!")
+    Fig.new.jiraquest
+    success("🤖  Welcome to jiraquest, #{Login.new.current_user}!")
   end
 
   def success(message)
@@ -28,7 +28,7 @@ class Reporter
   end
 
   def quest_complete(quest)
-    Fig.new.user_message('ROPRd HARD')
+    Fig.new.user_message('jirad HARD')
     sleep 3
     system 'clear'
     success("Congratulations! You completed the #{quest} Quest!")

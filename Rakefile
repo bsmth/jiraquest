@@ -5,7 +5,7 @@ require 'bundler/gem_tasks'
 task default: :run
 
 task :run do
-  ruby 'lib/roprquest.rb'
+  ruby 'lib/jiraquest.rb'
 end
 
 task :rubocop do

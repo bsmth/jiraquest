@@ -10,9 +10,9 @@ class Score
     @score = @store.transaction { @store[:score] }
   end
 
-  # ROPRS ==========================
+  # jiraS ==========================
   def report_score
-    puts "You have #{@score} ROPRs"
+    puts "You have #{@score} jiras"
   end
 
   def reset_score

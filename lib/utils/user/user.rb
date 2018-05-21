@@ -22,11 +22,11 @@ class Prompter
   end
 
   def create_user?
-    @prompt.yes?('Create a new ROPRQuest user?')
+    @prompt.yes?('Create a new jiraQuest user?')
   end
 
   def resume(user)
-    @prompt.yes?("Would you like to resume ROPRQuest as #{user}?")
+    @prompt.yes?("Would you like to resume jiraQuest as #{user}?")
   end
 
   def delete(user)
