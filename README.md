@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/jiraquest.svg)](https://badge.fury.io/rb/jiraquest)
+[![Gem Version](https://badge.fury.io/rb/Jiraquest.svg)](https://badge.fury.io/rb/Jiraquest)
 [![Build Status](https://travis-ci.org/tcob/jiraquest.svg?branch=master)](https://travis-ci.org/tcob/jiraquest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9778ab58de92f3242709/maintainability)](https://codeclimate.com/github/tcob/jiraquest/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9778ab58de92f3242709/test_coverage)](https://codeclimate.com/github/tcob/jiraquest/test_coverage)
