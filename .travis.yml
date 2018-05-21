@@ -13,7 +13,7 @@ before_script:
 - "./cc-test-reporter before-build"
 env:
   global:
-  - CC_TEST_REPORTER_ID=8db13b5426f53feb5dc03024a07bf4440018c3bcf0f857fa80c68f4d05c224d7
+  - CC_TEST_REPORTER_ID=1958f9211b28c82d766f2b1feb8b37f56276f12d257f823953544055956aeda6
 script:
 - bundle exec rake test
 after_script:
