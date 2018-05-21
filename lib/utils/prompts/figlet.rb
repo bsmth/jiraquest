@@ -12,16 +12,16 @@ class Fig
     @user = @store.transaction { @store[:user] }
   end
 
-  def roprquest
-    puts @figlet['ROPRQuest 2018!']
+  def jiraquest
+    puts @figlet['jiraquest 2018!']
   end
 
   def user
     puts @figlet[@user.to_s]
   end
 
-  def ropr_user
-    puts @figlet["#{@user} ROPRQuest"]
+  def jira_user
+    puts @figlet["#{@user} jiraquest"]
   end
 
   def user_message(message)

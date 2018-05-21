@@ -52,7 +52,7 @@ class Terminal
   def amazing_update(_title = 'Connecting')
     steps_message(10)
     steps_message(10, title = 'Contacting Software Sites')
-    steps_message(20, title = 'Indexing ROPRs')
+    steps_message(20, title = 'Indexing jiras')
     steps_message(10, title = 'Validating Checksums')
     steps_message(30, title = 'Checking Type Safety')
     steps_message(10, title = 'Deleting Previous Work')

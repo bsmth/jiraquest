@@ -2,18 +2,18 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'roprquest/version'
+require 'jiraquest/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'roprquest'
-  spec.version       = Roprquest::VERSION
+  spec.name          = 'Jiraquest'
+  spec.version       = Jiraquest::VERSION
   spec.authors       = ['tcob']
   spec.email         = ['briantcob@gmail.com']
 
-  spec.summary       = 'Immersive ROPRQuest Text-based adventure game.'
+  spec.summary       = 'Immersive jiraquest Text-based adventure game.'
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
 
-  spec.homepage      = 'https://github.com/tcob/roprquest'
+  spec.homepage      = 'https://github.com/tcob/jiraquest'
   spec.license       = 'MIT'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|

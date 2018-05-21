@@ -5,9 +5,9 @@ require_relative '../lib/utils/utils'
 require_relative 'suppress_output'
 
 class TestFiglet < Test::Unit::TestCase
-  def test_roprquest
+  def test_jiraquest
     assert_nothing_raised do
-      suppress_output { Fig.new.roprquest }
+      suppress_output { Fig.new.jiraquest }
     end
   end
 
@@ -17,9 +17,9 @@ class TestFiglet < Test::Unit::TestCase
     end
   end
 
-  def test_ropr_user
+  def test_jira_user
     assert_nothing_raised do
-      suppress_output { Fig.new.ropr_user }
+      suppress_output { Fig.new.jira_user }
     end
   end
 

@@ -131,7 +131,7 @@ class Activity
     if coffee_armageddon
       complain
     else
-      distract_warning('already, you may lose a ROPR!')
+      distract_warning('already, you may lose a jira!')
     end
   end
 
@@ -152,7 +152,7 @@ class Activity
     dc = read_warnings_count
     limits = dc.select { |_k, v| v > 1 }
     limits.each do |distraction, _count|
-      @prompt.error('You were warned! You now lose TEN ROPRs!')
+      @prompt.error('You were warned! You now lose TEN jiras!')
       update_warning(distraction)
       Score.new.update_points(-10)
     end

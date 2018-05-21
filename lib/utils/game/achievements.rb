@@ -26,7 +26,7 @@ class Achievement
   def employee_otm
     if @user[/[K|k]ristian/]
       @spinner.auto_spin
-      @spinner.update(title: 'Evaluating ROPR Performance')
+      @spinner.update(title: 'Evaluating Performance')
       sleep 5
       @spinner.update(title: 'Calculated Value Added to Company:')
       @spinner.success(@pastel.green("\n👨🏻‍💼 Kristian has earned: Employee Of The Month\n"))

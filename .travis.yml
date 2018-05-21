@@ -22,6 +22,6 @@ deploy:
   provider: rubygems
   api_key:
     secure: Q1B+GkPBh7dVH6KsuB2/XjLiHAlEfVByQVio0gIkiVslbmjdiNR2jFNODV0VyDwRUM9i2vQSv6ba86D/CNU0fLmqWOhD1W64J3aObctt/EZwFOFvEsSnt/W5tFdY/DcwjWdyWZuQypelzbUO9sdtwx9qHimmic6x5E0ElmbRt1gcmVOYElmrxckzBcZj8S5VuvZOx+PtXIDYdE4bAjMFU4VU2Y0u0LxFm6TL4tsLJChaZhxa6ZCJcL7N7gG8xlRn5+CbzUfrRpjP1uyPaBritRYoJUA/7ib8rIHhL1crQOl98Hk65YieyO+RS10d2eVH6soXH9GnWjg09ceIUpFZDFFUjHlhcjTnOjZEFE9l0u7dAstIsal0ma11h5MD3F3KMctsUWj46Zpyr99SuEdsNV96Mbkee1RFlImycknp4Pr0zxnEHd9pn8PQD48mzccZXoSxDvz3y5UM87AjASGvjVwOrqxGa4IuVJ0+y0euIu8FgBY4we/B8rK1RoYHk6xv8se84x+km0D/akbvhbr3mzo5rmt7g/41QbYn+ENUGv8p5wsi8/1j2QmB2nmZicTnINWUn4bBbBkCc94ELR1ZtJtt8kiOJOOp4yWTJP/lo8Yg09oI5KGhPvugiD2imTgENAsMVtOfHo7+3xcIl2KZLzA9hGqxv5sTuPe/fj0d/2Y=
-  gem: roprquest
+  gem: jiraquest
   on:
-    repo: tcob/ROPRQUEST
+    repo: tcob/jiraquest

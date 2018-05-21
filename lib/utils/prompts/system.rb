@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'terminal'
-require_relative '../../roprquest/distractions/activities'
+require_relative '../../jiraquest/distractions/activities'
 require 'tty-prompt'
 require 'ruby-progressbar'
 require 'timeout'

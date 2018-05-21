@@ -2,8 +2,8 @@
 
 require 'test/unit'
 require_relative '../lib/utils/utils.rb'
-require_relative '../lib/roprquest/quests/quests'
-require_relative '../lib/roprquest/distractions/distractions'
+require_relative '../lib/jiraquest/quests/quests'
+require_relative '../lib/jiraquest/distractions/distractions'
 
 class TestNotifications < Test::Unit::TestCase
   def test_ok_prompts
