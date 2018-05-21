@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'jiraquest/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'Jiraquest'
+  spec.name          = 'jiraquest'
   spec.version       = Jiraquest::VERSION
   spec.authors       = ['tcob']
   spec.email         = ['briantcob@gmail.com']
